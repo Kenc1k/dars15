@@ -1,8 +1,4 @@
 <?php
-namespace App\Database;
-
-use PDO;
-
 error_reporting(E_ALL); // Report all errors
 ini_set('display_errors', 1);
 
