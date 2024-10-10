@@ -16,3 +16,8 @@ if(!function_exists('view')){
         Views::make($view,$title,$models);
     }
 }
+if(!function_exists('view')){
+        function view($view,$title, $models = []){
+            Views::error($view,$title,$models);
+        }
+}

@@ -2,6 +2,8 @@
 
 namespace App\Routes;
 
+use App\Helpers\Views;
+
 class Route{
     public $request;
     public static array $routes = [];
@@ -25,7 +27,9 @@ class Route{
 
         $action = self:: $routes[$method][$path] ?? false;
         if(!$action){
-            echo "404 not found" . $path;
+            // echo "404 not found" . $path;
+            // dd(132);
+            Views::error();
         }
 
         if(is_array($action)){

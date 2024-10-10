@@ -16,4 +16,7 @@ class CategoryController{
         return view('contact' , 'Contact sahifa');
         
     }
+    public function error(){
+        return view('error','404 error');
+    }
 }
