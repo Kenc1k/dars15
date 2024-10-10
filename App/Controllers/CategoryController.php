@@ -2,17 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Helpers\Views;
+
 class CategoryController{
     public function index(){
-        include dirname(__DIR__) . '/Views/index.php';
+        return view('index' , 'Bosh sahifa');
     }
 
     public function about(){
-        include dirname(__DIR__) . '/Views/about.php';
-        
+        return view('about' , 'About sahifa');
     }    
     public function contact(){
-        include dirname(__DIR__) . '/Views/contact.php';
+        return view('contact' , 'Contact sahifa');
         
     }
 }
