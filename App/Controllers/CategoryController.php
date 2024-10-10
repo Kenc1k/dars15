@@ -4,11 +4,15 @@ namespace App\Controllers;
 
 class CategoryController{
     public function index(){
-        $models = Categorys::all();
-        return view('index' , 'Home' , $models);
+        include dirname(__DIR__) . '/Views/index.php';
     }
 
     public function about(){
-        return view('about' , 'About sahifa');
+        include dirname(__DIR__) . '/Views/about.php';
+        
+    }    
+    public function contact(){
+        include dirname(__DIR__) . '/Views/contact.php';
+        
     }
 }
