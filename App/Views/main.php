@@ -1,3 +1,8 @@
+<?php
+
+use App\Helpers;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +16,7 @@
         <li><a href="/about">about sahifa</a></li>
         <li><a href="/contact">Contact sahifa</a></li>
     </ul>
-    <?= $contact?>
+    <?= $content?>
 
     <h1>Footer</h1>
 

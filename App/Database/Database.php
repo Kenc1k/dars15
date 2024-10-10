@@ -22,4 +22,4 @@ class Database {
         }
     }
 }
-$connect = Database::getConnection();
+// $connect = Database::getConnection();
