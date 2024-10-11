@@ -1,18 +1,7 @@
 <?php
 use App\Models\Product;
 
-$id = $_GET['id'];
-$product = Product::get_all($id);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
-    $quantity = $_POST['quantity'];
-    $price = $_POST['price'];
-
-    Product::update($id, $name, $quantity, $price); 
-    header('Location: product_list.php'); 
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

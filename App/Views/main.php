@@ -1,6 +1,10 @@
 <?php
 use App\Models\Product;
 use PP\Models;
+
+// Fetch all products
+$all = Product::get_authories();
+
 ?>
 
 <!DOCTYPE html>
@@ -12,30 +16,27 @@ use PP\Models;
 </head>
 <body>
     <ul>
-        <li><a href="/">Bosh sahifa</a></li>
-        <li><a href="/about">About sahifa</a></li>
-        <li><a href="/contact">Contact sahifa</a></li>
+        <li><a href="/">Mualliflar</a></li>
+        <li><a href="/about">Janrlar</a></li>
+        <li><a href="/contact">Kitoblar</a></li>
     </ul>
 
-    <h1>Product List</h1>
+    <h1>Mualliflar</h1>
 
     <div style="margin-bottom: 20px;">
         <a href="Views/add_products33s.php">
             <button style="padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; border-radius: 5px;">
-                Add New Product
+                Muallif qoshish
             </button>
         </a>
     </div>
-
     <!-- Product Table -->
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border="1" cellpadding="10" cellspacing="0" align="center">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
@@ -44,8 +45,6 @@ use PP\Models;
                     <tr>
                         <td><?= $row->id ?></td>
                         <td><?= $row->name ?></td>
-                        <td><?= $row->quantity ?></td>
-                        <td><?= $row->price ?></td>
                         <td>
                             <!-- Edit Product Button -->
                             <a href="edit_product.php?id=<?= $row->id ?>">
@@ -70,9 +69,5 @@ use PP\Models;
             <?php endif; ?>
         </tbody>
     </table>
-
-    <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, consectetur voluptatem. Esse quidem vel blanditiis quisquam.</p>
-    </footer>
 </body>
 </html>

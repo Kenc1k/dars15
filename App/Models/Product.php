@@ -8,8 +8,4 @@ class Product extends Models{
     public static $table = 'products';
 
 }
-
-
-
-
 ?>

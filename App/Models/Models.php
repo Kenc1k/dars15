@@ -55,8 +55,8 @@ class Models extends Database{
     public static function create_book($title,$descriptin,$text,$img,$author_id,$genre_id){
         $sql = 'INSERT INTO ' . self::$table_books . ' (title,description,text,img,author_id,genre_id) VALUES(:title,:description,:text,:img,:author_id,:genre_id)';
         $query = self::getConnection()->prepare($sql);
-        $query->bindParam(':titele' , $title);
-        $query->bindParam(':description' , $descriptin);
+        $query->bindParam(':title' , $title);
+        $query->bindParam(':description' , $description);
         $query->bindParam(':text' , $text);
         $query->bindParam(':img' , $img);
         $query->bindParam(':author_id' , $author_id);
@@ -68,5 +68,5 @@ class Models extends Database{
                 return false;
                 }
     }
-    
+
 }
