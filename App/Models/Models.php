@@ -52,7 +52,7 @@ class Models extends Database{
                 }
     }
 
-    public static function create_book($title,$descriptin,$text,$img,$author_id,$genre_id){
+    public static function create_book($title,$description,$text,$img,$author_id,$genre_id){
         $sql = 'INSERT INTO ' . self::$table_books . ' (title,description,text,img,author_id,genre_id) VALUES(:title,:description,:text,:img,:author_id,:genre_id)';
         $query = self::getConnection()->prepare($sql);
         $query->bindParam(':title' , $title);
@@ -69,4 +69,43 @@ class Models extends Database{
                 }
     }
 
+    public static function delete_author($id){
+        $sql = 'DELETE FROM ' . self::$table_authors . ' WHERE id = :id';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':id' , $id);
+        try{
+            $query->execute();
+            return true;
+            }catch(PDOException $e){
+                return false;
+                }
+    }
+    public static function delete_genre($id){
+        $sql = 'DELETE FROM ' . self::$table_genres . ' WHERE id = :
+        id';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':id' , $id);
+        try{
+            $query->execute();
+            return true;
+            }catch(PDOException $e){
+                return false;
+                }
+    }
+
+    public static function delete_book($id){
+        $sql = 'DELETE FROM ' . self::$table_books . ' WHERE id = :id';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':id' , $id);
+        try{
+            $query->execute();
+            return true;
+            }catch(PDOException $e){
+                return false;
+                }
+    }
+
+    public static function update_author($name){
+        
+    }
 }

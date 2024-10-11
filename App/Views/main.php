@@ -1,8 +1,8 @@
 <?php
 use App\Models\Product;
-use PP\Models;
 
-// Fetch all products
+use App\Models;
+
 $all = Product::get_authories();
 
 ?>
