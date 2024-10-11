@@ -106,6 +106,44 @@ class Models extends Database{
     }
 
     public static function update_author($name){
-        
+        $sql = 'UPDATE ' . self::$table_authors . ' SET name = :name';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':name' , $name);
+        try{
+            $query->execute();
+            return true;
+            }catch(PDOException $e){
+                return false;
+                }
     }
+
+    public static function update_genre($name){
+        $sql = 'UPDATE ' . self::$table_genres . ' SET name = :name';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':name' , $name);
+        try{
+            $query->execute();
+            return true;
+        }catch(PDOException $e){
+            return false;
+        }
+    }
+
+    public static function update_book($title,$description,$text,$image,$author_id,$genre_id){
+        $sql = 'UPDATE ' . self::$table_books . ' SET title = :title,description = :description,text = :text,image = :image,author_id = :author_id,genre_id = :genre_id';
+        $query = self::getConnection()->prepare($sql);
+        $query->bindParam(':title' , $title);
+        $query->bindParam(':description' , $description);
+        $query->bindParam(':text' , $text);
+        $query->bindParam(':image' , $image);
+        $query->bindParam(':author_id' , $author_id);
+        $query->bindParam(':genre_id' , $genre_id);
+        try{
+            $query->execute();
+            return true;
+        }catch(PDOException $e){
+            return false;
+        }
+    }
+
 }

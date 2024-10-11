@@ -23,3 +23,15 @@ CREATE TABLE books (
     FOREIGN KEY (author_id) REFERENCES authors(id),
     FOREIGN KEY (genre_id) REFERENCES genres(id)
 );
+
+
+SELECT authors.name, COUNT(books.id) AS book_count
+FROM authors
+LEFT JOIN books ON books.author_id = authors.id
+GROUP BY authors.id;
+
+
+SELECT genres.name, COUNT(books.id) AS book_count
+FROM genres
+LEFT JOIN books ON books.genre_id = genres.id
+GROUP BY genres.id;
