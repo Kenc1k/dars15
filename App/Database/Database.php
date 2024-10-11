@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_ALL); // Report all errors
-ini_set('display_errors', 1);
 
-
+namespace App\Database;
+use PDO;
+use PDOException;
 
 class Database {
     private static $hostname = 'localhost';
     private static $user = 'root';
     private static $password = 'Str0ngP@ssw0rd!';
-    private static $dbname = 'products_db';
+    private static $dbname = 'library_db';
 
     public static function getConnection() :PDO
     {
